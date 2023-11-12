@@ -16,9 +16,8 @@ export default async function handler(req, res) {
 
   try {
     const query = 'SELECT * FROM customers WHERE email = ?';
-    const results = await db.query(query, [email]);  // Use the query function from db.js
+    const results = await db.query(query, [email]); 
 
-    // console.log('Database results:', results);
 
     if (results.length === 0) {
       return res.status(401).json({ message: 'Informations erronées ! Veuillez réessayer' });

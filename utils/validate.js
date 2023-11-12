@@ -1,15 +1,71 @@
-// utils/validate.js
 import Joi from 'joi';
 
 export const customerSchema = Joi.object({
   company_name: Joi.string().required(),
   email: Joi.string().email().required(),
-  password: Joi.string().min(8).required(),  // Assuming a minimum password length of 8 characters
+  password: Joi.string().min(8).required(),
   address: Joi.string().required(),
-  phone: Joi.string().pattern(new RegExp('^[0-9]{10}$')).required(),  // Assuming a 10-digit phone number
-  rate_table: Joi.object({
-    '1-2kg': Joi.number().required(),
-    '2-3kg': Joi.number().required(),
-    '3-4kg': Joi.number().required()
+  phone: Joi.string().pattern(new RegExp('^[0-9]{10}$')).required(),
+  parcel_pricing: Joi.object({
+    '0.5': Joi.number().required(),
+    '1.0': Joi.number().required(),
+    '1.5': Joi.number().required(),
+    '2.0': Joi.number().required(),
+    '2.5': Joi.number().required(),
+    '3.0': Joi.number().required(),
+    '3.5': Joi.number().required(),
+    '4.0': Joi.number().required(),
+    '4.5': Joi.number().required(),
+    '5.0': Joi.number().required(),
+    '5.5': Joi.number().required(),
+    '6.0': Joi.number().required(),
+    '6.5': Joi.number().required(),
+    '7.0': Joi.number().required(),
+    '7.5': Joi.number().required(),
+    '8.0': Joi.number().required(),
+    '8.5': Joi.number().required(),
+    '9.0': Joi.number().required(),
+    '9.5': Joi.number().required(),
+    '10': Joi.number().required(),
+    '11': Joi.number().required(),  
+    '12': Joi.number().required(),
+    '13': Joi.number().required(),
+    '14': Joi.number().required(),
+    '15': Joi.number().required(),
+    '16': Joi.number().required(),
+    '17': Joi.number().required(),
+    '18': Joi.number().required(),
+    '19': Joi.number().required(),
+    '20': Joi.number().required(),
+    '21': Joi.number().required(),
+    '22': Joi.number().required(),
+    '23': Joi.number().required(),
+    '24': Joi.number().required(),
+    '25': Joi.number().required(),
+    '26': Joi.number().required(),
+    '27': Joi.number().required(),
+    '28': Joi.number().required(),
+    '29': Joi.number().required(),
+    '30': Joi.number().required(),
+    '31': Joi.number().required(),
+    '32': Joi.number().required(),
+    '33': Joi.number().required(),
+    '34': Joi.number().required(),
+    '35': Joi.number().required(),
+    '40': Joi.number().required(),
+    '45': Joi.number().required(),
+    '50': Joi.number().required(),
+    '55': Joi.number().required(),
+    '60': Joi.number().required(),
+    '65': Joi.number().required(),
+    '70': Joi.number().required()
+  }).required(),
+  pallet_pricing: Joi.object({
+    base_price: Joi.number().required(),
+    '71-99': Joi.number().required(),
+    '100-299': Joi.number().required(),
+    '300-499': Joi.number().required(),
+    '500-999': Joi.number().required(),
+    '1000+': Joi.number().required()
   }).required()
 });

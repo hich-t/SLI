@@ -1,27 +1,28 @@
 // pages/login.js
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import 'tailwindcss/tailwind.css';
 import Link from 'next/link';
-import axios from 'axios';  // Import axios for making HTTP requests
-import { useRouter } from 'next/router';  // Import useRouter for redirecting the user
+import axios from 'axios';  
+import { useRouter } from 'next/router';  
+import 'tailwindcss/tailwind.css';
+
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [loginError, setLoginError] = useState('');
   const router = useRouter();
 
+
+  
   const onSubmit = async (data) => {
     try {
       const response = await axios.post('/api/auth/login', data);
-      localStorage.setItem('token', response.data.token);  // Store the token securely
-      router.push('/dashboard');  // Redirect to dashboard on successful login
+      localStorage.setItem('token', response.data.token);  
+      router.push('/dashboard');  
     } catch (error) {
       if (error.response && error.response.data) {
-        // Display error message from server
         alert(error.response.data.message);
       } else {
-        // General error handling
         alert('An error occurred. Please try again.');
       }
     }

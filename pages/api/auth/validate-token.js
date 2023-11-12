@@ -16,7 +16,6 @@ export default async function handler(req, res) {
   try {
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
 
-    // Fetch user data from database using decodedToken.userId
     const query = 'SELECT * FROM customers WHERE id = ?';
     const results = await db.query(query, [decodedToken.userId]);
 

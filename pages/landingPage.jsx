@@ -14,9 +14,7 @@ const LandingPage = ({ quiSommesNousRef, uneQuestionRef }) => {
 
   return (
     <main className="w-full h-screen relative">
-      {/* Background */}
       <div className="w-full h-full absolute">
-        {/* Video for large screens */}
         <video
           className="hidden sm:block w-full h-full object-cover"
           autoPlay
@@ -25,7 +23,6 @@ const LandingPage = ({ quiSommesNousRef, uneQuestionRef }) => {
         >
           <source src="Assets/video/SLI_videoBg.mp4" />
         </video>
-        {/* Image for mobile screens */}
         <img
           className="sm:hidden w-full h-full object-cover"
           src="Assets/images/bg_mobile.png"
@@ -33,11 +30,9 @@ const LandingPage = ({ quiSommesNousRef, uneQuestionRef }) => {
         />
       </div>
 
-      {/* Menu */}
       <div className="font-noto-sans text-xl h-28 z-9999 flex items-center shadow-custom-red justify-between w-full bg-white text-maroc-red absolute top-0 px-6 sm:px-20">
         <img className="w-28 ml-10" src="Assets/images/sli_logo.png" alt="logo sli" />
 
-        {/* Large Screen Layout */}
         <div className="hidden sm:flex">
         <p className="mr-12 font-normal cursor-pointer" onClick={() => scrollToRef(quiSommesNousRef)}>Qui Sommes Nous ?</p>
         <p className="font-normal cursor-pointer" onClick={() => scrollToRef(uneQuestionRef)}>Une question ?</p>
@@ -48,7 +43,6 @@ const LandingPage = ({ quiSommesNousRef, uneQuestionRef }) => {
           <p className="font-bold mr-20">Espace Client</p>
         </Link>
 
-        {/* Hamburger Icon for Mobile Layout */}
         <button 
           className="sm:hidden flex items-center px-3 py-2 border rounded"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -60,7 +54,6 @@ const LandingPage = ({ quiSommesNousRef, uneQuestionRef }) => {
         </button>
       </div>
 
-      {/* Mobile Menu Layout */}
       <nav className={`sm:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} font-noto-sans font-bold bg-maroc-red w-full text-white px-6 py-3 fixed top-28 z-20`}>
       <button role="link" className="block mt-4"   onClick={() => {
     scrollToRef(quiSommesNousRef);
@@ -79,7 +72,6 @@ const LandingPage = ({ quiSommesNousRef, uneQuestionRef }) => {
         </Link>
       </nav>
 
-      {/* FirstPage Content for large screens */}
       <div className="hidden sm:flex text-white flex-col absolute top-[25%] left-[60%] animate-fadeIn">
         <img className="w-52 animate-fadeIn" src="Assets/images/sli_logo_seul.png" alt="logo sli" />
         <p 
@@ -91,7 +83,6 @@ const LandingPage = ({ quiSommesNousRef, uneQuestionRef }) => {
         </p>
       </div>
 
-      {/* FirstPage Content for mobile screens */}
       <div className="sm:hidden w-full text-white flex-col absolute top-[20%] z-10">
         <p className="font-noto-sans font-black text-white text-3xl text-center">
             Votre partenaire privilégié

@@ -5,6 +5,8 @@ import LandingPage from "../pages/landingPage";
 import SecondPage from "../pages/secondPage"; 
 import ThirdPage from "../pages/thirdpage";
 import { useEffect, useRef, useState } from 'react';
+import 'tailwindcss/tailwind.css';
+
 
 const Home = () => {
   const firstSectionRef = useRef(null);
