@@ -30,9 +30,9 @@ const ThirdPage = () => {
             <img className="w-24 " src="Assets/images/sli_logo.png" alt="logo SLI" />
 
             <p className="font-noto-sans font-normal text-maroc-red font-large">
-                Adresse : xxxxxxxxxxxx<br />
+                Adresse : Résidence Eden Tamaris, Casablanca - Maroc<br />
                 Tel : 00 000 0000 0000<br />
-                Email : xxxxxx@xxxxx.co
+                Email : contact@sli.com
             </p>
             
             <p 
