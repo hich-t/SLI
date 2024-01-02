@@ -2,7 +2,7 @@
 import jwt from 'jsonwebtoken';
 import db from '../../../utils/db';
 
-export default async function handler(req, res) {
+const handler = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
@@ -15,7 +15,6 @@ export default async function handler(req, res) {
 
   try {
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-
     const query = 'SELECT * FROM customers WHERE id = ?';
     const results = await db.query(query, [decodedToken.userId]);
 
@@ -29,4 +28,6 @@ export default async function handler(req, res) {
     console.error(error);
     res.status(500).json({ message: 'Internal server error' });
   }
-}
+};
+
+export default handler;
